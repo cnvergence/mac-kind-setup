@@ -1,0 +1,22 @@
+apiVersion: kubevirt.io/v1
+kind: KubeVirt
+metadata:
+  name: kubevirt
+  namespace: kubevirt
+spec:
+  certificateRotateStrategy: {}
+  configuration:
+    developerConfiguration:
+      featureGates:
+      - ExperimentalIgnitionSupport
+      - DataVolumes
+      - LiveMigration
+      - CPUManager
+      - CPUNodeDiscovery
+      - Sidecar
+      - Snapshot
+      - HotplugVolumes
+      useEmulation: true
+  customizeComponents: {}
+  imagePullPolicy: IfNotPresent
+  workloadUpdateStrategy: {}
